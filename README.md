@@ -27,10 +27,10 @@ The `vue.config.js` file does several important things:
 - Clone project
 - `cp django_web/.env_example django_web/.env`
 - `docker-compose up`
-- ssh into `djangovue_web` container (eg `docker exec -it djangovue_web_1 /bin/bash`)
+- ssh into `djangovue_web` container `docker exec -it django_vue_web bash`
 - `yarn install`
 - `yarn serve`
-- As configured via docker-compose.yml, project will be running at `localhost:8010/`
+- As configured via docker-compose.yml, project will be running at `localhost:8000/`
 
 ## Development
 Check out scripts defined in `package.json`
