@@ -22,7 +22,7 @@ services:
       target: dev
       dockerfile: ./Dockerfile
     ports:
-      - "8010:8000"
+      - "8000:8000"
       - "8080:8080"
     command: bash -c "waitforit -host=db -port=5432 --timeout 30 &&
           python3 /code/manage.py collectstatic --noinput &&
