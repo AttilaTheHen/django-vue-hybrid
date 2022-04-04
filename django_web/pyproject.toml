@@ -25,6 +25,7 @@ elastic-apm = "5.8.*"
 # Gunicorn
 gunicorn = "^20.0.4"
 gevent = "^20.9.0"
+django-vite = "^2.0.2"
 
 
 [tool.poetry.dev-dependencies]
