@@ -1,4 +1,4 @@
-# django-vue-hybrid
+# Django Vue Hybrid (with vite)
 
 ![screenshot of Vue running on top of Django](./screenshot.png)
 
