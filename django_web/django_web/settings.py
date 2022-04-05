@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "webpack_loader",
+    "django_vite"
 ]
 
 INSTALLED_APPS += ENV_APPS + PROJECT_APPS
@@ -248,16 +249,9 @@ if ELASTIC_APM_DEBUG:
 LOGGING["handlers"].update(ENV_LOGGING["handlers"])
 LOGGING["loggers"].update(ENV_LOGGING["loggers"])
 
-WEBPACK_LOADER = {
-    "DEFAULT": {
-        "CACHE": not DEBUG,
-        "BUNDLE_DIR_NAME": "dist/",  # must end with slash
-        "STATS_FILE": os.path.join(PROJECT_ROOT, "webpack-stats.json"),
-        "POLL_INTERVAL": 0.1,
-        "TIMEOUT": None,
-        "IGNORE": [
-            r".+\.hot-update.js",
-            r".+\.map",
-        ],  # since doing weird stuff stop autoudating
-    }
-}
+DJANGO_VITE_ASSETS_PATH = 'static'
+DJANGO_VITE_DEV_MODE = IS_DEV
+DJANGO_VITE_DEV_SERVER_PORT = '8081'
+DJANGO_VITE_DEV_SERVER_HOST = '0.0.0.0'
+DJANGO_VITE_WS_CLIENT_URL = '@vite/client'
+DJANGO_VITE_MANIFEST_PATH = 'static/manifest.json'

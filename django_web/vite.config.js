@@ -1,8 +1,7 @@
 const { createVuePlugin } = require('vite-plugin-vue2');
 import { createSvgPlugin } from "vite-plugin-vue2-svg";
 const { resolve } = require('path');
-
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 
 const DEV = process.env.NODE_ENV !== 'production';
 
@@ -12,7 +11,7 @@ const DEV = process.env.NODE_ENV !== 'production';
  */
 export default defineConfig({
   root: './vue/',
-  base: '/static/dist/js/',
+  base: '/static/',
   plugins: [
     createVuePlugin({
       vueTemplateOptions: {
@@ -24,7 +23,7 @@ export default defineConfig({
     createSvgPlugin(),
   ],
   resolve: {
-    extensions: ['.vue', '.js', '.json']
+    extensions: ['.vue', '.js', '.json'],
   },
   server: {
     host: '0.0.0.0',
@@ -37,7 +36,7 @@ export default defineConfig({
     strictPort: true,
   },
   build: {
-    outputDir: resolve('./static/dist/'),
+    outputDir: resolve('./static/'),
     assetsDir: '',
     manifest: true,
     rollupOptions: {
@@ -45,7 +44,7 @@ export default defineConfig({
       input: resolve('./vue/main.js'),
       output: {
         chunkFileNames: undefined,
-        dir: './static/dist/js/',
+        dir: './static/',
       },
     },
   },
