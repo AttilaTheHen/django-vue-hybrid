@@ -37,3 +37,11 @@ Check out scripts defined in `package.json`
 
 - `yarn serve` will compile tailwindcss and start both Django's dev server and vue-cli's dev server, configured for hot reloading
 - Python packages are managed with [Poetry](https://python-poetry.org/). To use the Poetry cli within the container, you must first `source $HOME/.poetry/env`.
+
+
+## Demo
+Look at the following files to see a demo of Django and Vue playing together.
+- `django_web/apps/core/views.py` defining a simple template view with some extra context
+- `django_web/apps/core/templates/demo.html` passing the Django context to the Vue component as a prop
+- `django_web/vue/components/DemoComponent.vue` a simple Vue component using Tailwindcss
+- `django_web/vue/main.js` lazy loading the Vue component so it can be used in the Django template
