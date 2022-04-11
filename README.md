@@ -24,13 +24,13 @@ The `vue.config.js` file does several important things:
 
 ## Project Setup
 
-- Clone project
+- [Install Docker](https://docs.docker.com/get-docker/)
+- Clone or fork the project
 - `cp django_web/.env_example django_web/.env`
 - `docker-compose up`
-- ssh into `djangovue_web` container `docker exec -it django_vue_web bash`
-- `yarn install`
-- `yarn serve`
-- As configured via docker-compose.yml, project will be running at `localhost:8000/`
+- Go into `djangovue_web` container `docker exec -it django_vue_web bash`
+- In the docker container now run: `yarn install` and then `yarn serve`
+- As configured via docker-compose.yml, the project will be running at `localhost:8000/`
 
 ## Development
 Check out scripts defined in `package.json`
